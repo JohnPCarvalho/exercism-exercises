@@ -1,11 +1,11 @@
 defmodule FreelancerRates do
 
   def daily_rate(hourly_rate) do
-    hourly_rate * 80
+    hourly_rate * 8
   end
 
   def apply_discount(price, discount_percentage) do
-   calculate_percentage(price, discount_percentage) - price
+    price - calculate_percentage(price, discount_percentage)
   end
 
   def monthly_rate(hourly_rate, discount_percentage) do
@@ -18,7 +18,6 @@ defmodule FreelancerRates do
       montly_rate(hourly_rate)
       |> apply_discount(discount_percentage)
 
-    20000 % amount_with_discount
   end
 
   defp calculate_percentage(amount, percentage) do
