@@ -24,9 +24,6 @@ defmodule Secrets do
   end
 
   def secret_combine(secret_function1, secret_function2) do
-    fn param ->
-      secret_function1.(param)
-      |> secret_function2.()
-    end
+    &(&1 |> secret_function1.() |> secret_function2.())
   end
 end
