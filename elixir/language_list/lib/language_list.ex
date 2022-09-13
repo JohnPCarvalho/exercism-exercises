@@ -4,5 +4,5 @@ defmodule LanguageList do
   def remove(list), do: tl(list)
   def first(list), do: hd(list)
   def count(list), do: length(list)
-  def functional_list?(list), do: if("Elixir" in list, do: true)
+  def functional_list?(list), do: "Elixir" in list
 end
